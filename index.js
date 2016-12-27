@@ -1,6 +1,7 @@
 const fs = require('fs');
-const YAML = require('yamljs');
 const got = require('got');
+
+const YAML = require('yamljs');
 
 got('https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml')
   .then(res => {

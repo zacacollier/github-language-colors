@@ -1,0 +1,45 @@
+1C Enterprise:
+  type: programming
+  color: "#814CCC"
+  extensions:
+    - ".bsl"
+    - ".os"
+  tm_scope: source.bsl
+  ace_mode: text
+  language_id: 0
+ABAP:
+  type: programming
+  color: "#E8274B"
+  extensions:
+    - ".abap"
+  ace_mode: abap
+  language_id: 1
+ABNF:
+  type: data
+  ace_mode: text
+  extensions:
+    - ".abnf"
+  tm_scope: source.abnf
+  language_id: 429
+AGS Script:
+  type: programming
+  color: "#B9D9FF"
+  aliases:
+    - ags
+  extensions:
+    - ".asc"
+    - ".ash"
+  tm_scope: source.c++
+  ace_mode: c_cpp
+  codemirror_mode: clike
+  codemirror_mime_type: text/x-c++src
+  language_id: 2
+AMPL:
+  type: programming
+  color: "#E6EFBB"
+  extensions:
+    - ".ampl"
+    - ".mod"
+  tm_scope: source.ampl
+  ace_mode: text
+  language_id: 3
