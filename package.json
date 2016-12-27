@@ -1,0 +1,15 @@
+{
+  "name": "github-language-colors",
+  "version": "1.0.0",
+  "description": "Retrieves color values used for Repo languages on GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "author": "Zac Collier",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^6.6.3",
+    "yamljs": "^0.2.8"
+  }
+}
