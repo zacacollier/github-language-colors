@@ -29,16 +29,62 @@ function writeToYaml(input) {
   const fileName = "gh-colors.yaml";
   fs.writeFile(fileName, input, 'utf8', (err) => {
     if (err) throw err;
-    console.log(chalk.green(`Saved to ${fileName}`))
+    else {
+    console.log(chalk.green(`Saved to ${fileName}`));
+    convertToJSON(fileName);
+    }
   });
 }
 
+const convertToJSON = (input, pretty = true, save = true, spaces = 2, str = null) => {
+  spinner.setSpinnerTitle(chalk.yellow('Converting to JSON... %s'));
+  spinner.start();
+  let json;
+  //if (spaces == null) spaces = 2;
+  if (str != null) {
+      if (pretty) {
+          json = JSON.stringify(YAML.parse(str), null, spaces);
+      }
+      else {
+          json = JSON.stringify(YAML.parse(str));
+      }
+  } else {
+      if (pretty) {
+          json = JSON.stringify(YAML.parseFile(input), null, spaces);
+      }
+      else {
+          json = JSON.stringify(YAML.parseFile(input));
+      }
+  }
+
+  if (!save || input == null) {
+      process.stdout.write(json+"\n");
+  }
+  else {
+      let output;
+      if (input.substring(input.length-4) == '.yml') {
+          output = input.substr(0, input.length-4) + '.json';
+      }
+      else if (input.substring(input.length-5) == '.yaml') {
+          output = input.substr(0, input.length-5) + '.json';
+      }
+      else {
+          output = input + '.json';
+      }
+
+      // Write to .json
+      let file = fs.openSync(output, 'w+');
+      fs.writeSync(file, json);
+      fs.closeSync(file);
+      spinner.stop();
+      console.log(chalk.cyan(`Converted yaml, saved to gh-colors.json`));
+  }
+};
 
 got(url)
   .then(res => {
     // Remove Headers
     spinner.stop(!!res);
-    spinner.setSpinnerTitle(chalk.yellow('Fetched YAML, converting to JSON...'));
     let splitResult = res.body.split(/\n/);
     resultRemoveComments(splitResult);
   })
