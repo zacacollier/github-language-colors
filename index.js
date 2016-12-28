@@ -15,8 +15,7 @@ function resultRemoveComments(result) {
 
   fs.writeFile('newColors.yaml', resultCommentsRemoved, (err) => {
     if (err) throw err;
-    console.log(`Saved to ${arguments[0]}`);
-  });
+  }, () => console.log(`Saved to ${arguments[0]}`));
 }
 
 got('https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml')
