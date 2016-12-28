@@ -1,6 +1,8 @@
 const fs = require('fs');
 const got = require('got');
 const YAML = require('yamljs');
+const chalk = require('chalk');
+const Spinner = require('cli-spinner').Spinner;
 
 function resultRemoveComments(result) {
   let resultCommentsRemoved = result.map((line) => {
@@ -15,9 +17,10 @@ function resultRemoveComments(result) {
 }
 
 function writeToYaml(input) {
-  fs.writeFile('newColors.yaml', input, 'utf8', (err) => {
+  const fileName = "gh-colors.yaml";
+  fs.writeFile(fileName, input, 'utf8', (err) => {
     if (err) throw err;
-    console.log(`Saved to ${arguments[0]}`)
+    console.log(chalk.green(`Saved to ${fileName}`))
   });
 }
 
