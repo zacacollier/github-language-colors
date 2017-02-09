@@ -1348,6 +1348,7 @@
       ".gnus",
       ".spacemacs",
       ".viper",
+      "Cask",
       "Project.ede",
       "_emacs",
       "abbrev_defs"
@@ -1667,6 +1668,16 @@
     "codemirror_mode": "clike",
     "codemirror_mime_type": "text/x-c++src",
     "language_id": 125
+  },
+  "Genie": {
+    "type": "programming",
+    "ace_mode": "text",
+    "extensions": [
+      ".gs"
+    ],
+    "color": "#fb855d",
+    "tm_scope": "none",
+    "language_id": 792408528
   },
   "Genshi": {
     "type": "programming",
@@ -2122,7 +2133,7 @@
     "aliases": [
       "hylang"
     ],
-    "tm_scope": "source.hy",
+    "tm_scope": "none",
     "language_id": 159
   },
   "HyPhy": {
@@ -4627,6 +4638,7 @@
       ".cql",
       ".ddl",
       ".inc",
+      ".mysql",
       ".prc",
       ".tab",
       ".udf",
@@ -5213,10 +5225,13 @@
       "COPYING",
       "FONTLOG",
       "INSTALL",
+      "INSTALL.mysql",
       "LICENSE",
+      "LICENSE.mysql",
       "NEWS",
       "README.1ST",
       "README.me",
+      "README.mysql",
       "click.me",
       "delete.me",
       "keep.me",
@@ -5565,6 +5580,17 @@
     "codemirror_mime_type": "text/x-csrc",
     "language_id": 398
   },
+  "XCompose": {
+    "type": "data",
+    "filenames": [
+      ".XCompose",
+      "XCompose",
+      "xcompose"
+    ],
+    "tm_scope": "config.xcompose",
+    "ace_mode": "text",
+    "language_id": 225167241
+  },
   "XML": {
     "type": "data",
     "ace_mode": "xml",
@@ -5777,7 +5803,8 @@
       ".sublime-syntax",
       ".syntax",
       ".yaml",
-      ".yaml-tmlanguage"
+      ".yaml-tmlanguage",
+      ".yml.mysql"
     ],
     "filenames": [
       ".clang-format"
